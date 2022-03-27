@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 const startups = [7000, 7000, 7000, 7000];
 const data = [
   {
@@ -21,6 +22,7 @@ const data = [
   },
 ];
 const StartUp = () => {
+  const [extra, setExtra] = useState(false);
   return (
     <section>
       <div className="max-w-6xl mx-auto">
@@ -46,7 +48,7 @@ const StartUp = () => {
         </div>
         <hr className="mt-8" />
         <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 items-center justify-between mt-10">
-          <h1 className="text-2xl lg:text-5xl text-center lg:text-left text-[#003054] font-bold">
+          <h1 className="text-2xl lg:mb-4 lg:text-5xl text-center lg:text-left text-[#003054] font-bold">
             What investors are looking for?
           </h1>
           <button className="bg-[#0B96FF] text-xl font-semibold text-white w-[250px] rounded-full py-1">
@@ -71,9 +73,32 @@ const StartUp = () => {
             </div>
           ))}
         </div>
+        {extra && (
+          <div className="flex flex-col space-y-6 lg:space-y-0 flex-wrap lg:flex-row items-center justify-between mt-10">
+            {data.map((item) => (
+              <div
+                key={item.id}
+                className="w-[90%] mx-auto  lg:w-[32%] flex flex-col items-center rounded-lg overflow-hidden shadow-lg">
+                <p className="bg-[#0B96FF]  text-white font-bold text-xl  w-full text-center py-1">
+                  Startup
+                </p>
+                <div className="space-y-10 p-2 text-center ">
+                  <span className="text-xl text-[#636363]">{item.text}</span>
+                  <div className="flex flex-col text-[#BDBDBD]">
+                    <span> Market: {item.market}</span>
+                    <span> Location: {item.location}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
         <div className="w-[100px] mb-10 mx-auto">
-          <button className="mt-10 bg-[#0B96FF] w-full text-xl font-medium text-white  rounded full py-1">
-            See more
+          <button
+            onClick={() => setExtra(!extra)}
+            className="mt-10 bg-[#0B96FF] w-full text-xl font-medium text-white  rounded full py-1">
+            {extra ? "Hide" : "See More"}
           </button>
         </div>
       </div>
