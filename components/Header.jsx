@@ -97,7 +97,7 @@ const Header = () => {
           className="font-normal text-gray-500 space-y-4">
           {navItems.map((navItem) => (
             <li key={navItem}>
-              <Link href={`/${navItem}.`.toLowerCase()}>
+              <Link href={`#${navItem}`.toLowerCase().replace(" ", "-")}>
                 <a className="font-medium inline-flex items-center hover:bg-gray-200 px-4 py-2 transition w-full">
                   {navItem}
                 </a>
