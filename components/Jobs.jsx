@@ -73,7 +73,7 @@ const Jobs = () => {
         job.title.toLowerCase().includes(search.toLowerCase().trim())
       );
   return (
-    <main className="bg-[#F0F3F4]">
+    <main id="services" className="bg-[#F0F3F4]">
       <div className="max-w-6xl mx-auto pt-10">
         <div className="flex space-x-4 flex-col lg:flex-row mx-auto items-center justify-center">
           <div className="relative">

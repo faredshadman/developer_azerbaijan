@@ -24,7 +24,7 @@ const data = [
 const StartUp = () => {
   const [extra, setExtra] = useState(false);
   return (
-    <section>
+    <section id="startups">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col items-center  max-w-lg mx-auto mt-4 space-y-6">
           <h1 className="text-5xl">Startup</h1>

@@ -2,7 +2,9 @@ import Image from "next/image";
 import { FaFacebook, FaInstagram, FaYoutube, FaGithub } from "react-icons/fa";
 const Footer = () => {
   return (
-    <footer className="bg-[#F0F3F4]  mx-auto text-center lg:text-left">
+    <footer
+      id="contact-us"
+      className="bg-[#F0F3F4]  mx-auto text-center lg:text-left">
       <div className="max-w-6xl mx-auto pt-10">
         <div className="flex flex-col  border-b-[1px] border-[#B5B5B5] items-center sm:items-start sm:flex-row space-y-10 sm:space-y-0 sm:space-x-10">
           <div className="mt-12">
