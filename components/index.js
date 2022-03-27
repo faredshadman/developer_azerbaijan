@@ -8,3 +8,4 @@ export { default as Jobs } from "./Jobs.jsx";
 export { default as Team } from "./Team.jsx";
 export { default as Projects } from "./Projects.jsx";
 export { default as Partners } from "./Partners.jsx";
+export { default as TeamMember } from "./TeamMember.jsx";

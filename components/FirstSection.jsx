@@ -42,15 +42,15 @@ const FirstSection = () => {
         <h1 className="flex w-[80%] text-center mx-auto sm:text-6xl text-4xl font-bold text-[#003054]">
           Lorem ipsum dolor sit amet
         </h1>
-        <p className="text-2xl text-center text-[#636363]">
+        <p className="text-lg sm:text-2xl text-center text-[#636363]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco lab
         </p>
         <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-4 h-10">
           <input
-            className="w-[300px] lg:w-[480px] border-[#8E8E8E] z-[2]  rounded-md border-[1px] outline-none px-2"
-            type="text"
+            className="w-[300px] lg:w-[480px] py-1 border-[#8E8E8E] z-[2]  rounded-md border-[1px] outline-none px-2"
+            type="email"
             placeholder="Email address"
           />
           <button className="bg-[#0B96FF] font-bold text-white px-5 py-1 rounded-lg">

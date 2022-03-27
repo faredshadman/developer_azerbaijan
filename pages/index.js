@@ -7,7 +7,6 @@ import {
   Team,
   Projects,
   Partners,
-  Footer,
 } from "../components";
 export default function Home() {
   return (
@@ -24,7 +23,6 @@ export default function Home() {
       <Team />
       <Projects />
       <Partners />
-      <Footer />
     </div>
   );
 }

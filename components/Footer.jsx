@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="mt-12">
             <Image src="/img/partner.svg" alt="logo" width={100} height={80} />
           </div>
-          <div className="grid w-full lg:grid-cols-4 sm:grid-cols-2">
+          <div className="grid w-full lg:grid-cols-4 grid-cols-2">
             <div className="mb-6">
               <h5 className="uppercase font-bold mb-2.5 text-gray-800">
                 Lorem ipsum

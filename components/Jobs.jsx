@@ -77,12 +77,12 @@ const Jobs = () => {
       <div className="max-w-6xl mx-auto pt-10">
         <div className="flex space-x-4 flex-col lg:flex-row mx-auto items-center justify-center">
           <div className="relative">
-            <FaSearch className="absolute top-2 text-sm left-2 text-[#BDBDBD]" />
+            <FaSearch className="absolute top-3 sm:top-2 text-sm left-2 text-[#BDBDBD]" />
             <input
               value={search}
               onChange={(e) => handleSearchChange(e)}
               placeholder="Keyword or title title"
-              className="w-[360px] rounded-md border-[#8E8E8E] border outline-none px-6"
+              className="w-[360px] py-1 sm:py-0 rounded-md border-[#8E8E8E] border outline-none px-6"
               type="text"
             />
           </div>
@@ -110,10 +110,10 @@ const Jobs = () => {
               height={60}
             />
             <div className="flex flex-col space-y-2">
-              <h1 className="text-[#003054] font-bold text-center text-2xl lg:text-5xl">
+              <h1 className="text-[#003054] font-bold text-2xl lg:text-5xl">
                 Post your own job
               </h1>
-              <p className="text-lg text-center text-[#636363]">
+              <p className="text-lg w-[300px]    text-[#636363]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </p>
             </div>
@@ -151,7 +151,7 @@ const Jobs = () => {
           </div>
         </div>
         <div className="flex items-center flex-col mt-10 space-y-10 pb-14">
-          <h1 className="text-[#003054] text-center text-5xl font-bold font-poppins">
+          <h1 className="text-[#003054] text-center text-2xl lg:text-5xl font-bold font-poppins">
             Popular searches
           </h1>
           <div className="flex flex-col lg:flex-row space-x-0 space-y-4 lg:space-y-0 items-center justify-between lg:space-x-6">

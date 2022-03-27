@@ -10,10 +10,12 @@ const Project = ({ project, extra, setExtra }) => {
         alt="project"
       />
       <div className="text-center space-y-4">
-        <p>{project.desc}</p>
-        {extra && <p>{project.extraDesc}</p>}
-        <button className="border border-[#0B96FF] px-4 rounded-md">
-          Read More
+        <p className="text-justify px-4">{project.desc}</p>
+        {extra && <p className="text-justify px-4">{project.extraDesc}</p>}
+        <button
+          onClick={() => setExtra(!extra)}
+          className="border border-[#0B96FF] px-4 rounded-md">
+          {extra ? "Hide" : "Read More"}
         </button>
       </div>
     </div>
