@@ -1,12 +1,14 @@
 import Image from "next/image";
-const Project = ({ project, extra, setExtra }) => {
+import { useState } from "react";
+const Project = ({ project, index }) => {
+  const [extra, setExtra] = useState(false);
   return (
-    <div className="flex rounded-md flex-col relative w-[90%] shadow-lg pb-2 mx-auto md:w-[30%]">
+    <div className="flex rounded-md flex-col relative shadow-lg pb-2 mx-auto">
       <Image
         src={project.src}
-        width={200}
+        width={220}
         height={210}
-        objectFit="contain"
+        objectFit="cover"
         alt="project"
       />
       <div className="text-center space-y-4">
