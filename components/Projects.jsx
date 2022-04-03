@@ -23,7 +23,6 @@ const projects = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, ullam corporis! Dicta laboriosam ducimus sit culpa dolore quibusdam corporis earum.",
   },
 ];
-// flex flex-col md:flex-row space-y-4 md:space-y-0 justify-between mb-10
 const Projects = () => {
   const [extraProject, setExtraProject] = useState(false);
   return (
