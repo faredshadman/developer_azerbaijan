@@ -1,4 +1,7 @@
 import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const lessons = [
   {
     id: 0,
@@ -32,6 +35,10 @@ const lessons = [
   },
 ];
 const Lessons = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <main
       id="lessons"
@@ -55,6 +62,8 @@ const Lessons = () => {
       <div className="max-w-6xl mx-auto flex flex-wrap flex-col lg:flex-row justify-between mt-14 mb-6">
         {lessons.map((lesson) => (
           <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom"
             key={lesson.id}
             className="bg-white rounded-xl w-[90%] mx-auto lg:w-[30%] p-4 h-52 flex flex-col items-center justify-between text-center mb-10">
             <h1 className="text-5xl text-[#003054] font-bold">{lesson.name}</h1>

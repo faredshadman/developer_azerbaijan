@@ -1,7 +1,9 @@
+import { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import { BiChevronRight } from "react-icons/bi";
 import Image from "next/image";
-import { useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const jobs = [
   {
     title: "Developer",
@@ -63,6 +65,10 @@ const jobs = [
 const populars = ["Developer", "Designer", "Developer", "Designer"];
 
 const Jobs = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   const [search, setSearch] = useState("");
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
@@ -75,7 +81,9 @@ const Jobs = () => {
   return (
     <main id="services" className="bg-[#F0F3F4]">
       <div className="max-w-6xl mx-auto pt-10">
-        <div className="flex space-x-4 flex-col lg:flex-row mx-auto items-center justify-center">
+        <div
+          data-aos="fade-down"
+          className="flex space-x-4 flex-col lg:flex-row mx-auto items-center justify-center">
           <div className="relative">
             <FaSearch className="absolute top-3 sm:top-2 text-sm left-2 text-[#BDBDBD]" />
             <input
@@ -101,7 +109,9 @@ const Jobs = () => {
             </button>
           </div>
         </div>
-        <div className="bg-white rounded-lg flex flex-col space-y-6 lg:space-y-0 lg:flex-row items-center justify-between p-8 mt-10">
+        <div
+          data-aos="fade-left"
+          className="bg-white rounded-lg flex flex-col space-y-6 lg:space-y-0 lg:flex-row items-center justify-between p-8 mt-10">
           <div className="flex space-x-20 flex-col lg:flex-row">
             <Image
               src="/img/job_svg.svg"
@@ -132,7 +142,7 @@ const Jobs = () => {
                 No candidates founded
               </h1>
             )}
-            <ul className="list-none w-5/12">
+            <ul className="list-none w-5/12" data-aos="fade-right">
               {filtered.map((job, i) => (
                 <li className="relative" key={i}>
                   <BiChevronRight className="absolute top-1 -left-5" />
@@ -140,7 +150,7 @@ const Jobs = () => {
                 </li>
               ))}
             </ul>
-            <ul className="list-none w-5/12">
+            <ul className="list-none w-5/12" data-aos="fade-right">
               {filtered.map((job, i) => (
                 <li className="relative" key={i}>
                   <BiChevronRight className="absolute top-1 -left-5" />
@@ -154,7 +164,9 @@ const Jobs = () => {
           <h1 className="text-[#003054] text-center text-2xl lg:text-5xl font-bold font-poppins">
             Popular searches
           </h1>
-          <div className="flex flex-col lg:flex-row space-x-0 space-y-4 lg:space-y-0 items-center justify-between lg:space-x-6">
+          <div
+            data-aos="fade-right"
+            className="flex flex-col lg:flex-row space-x-0 space-y-4 lg:space-y-0 items-center justify-between lg:space-x-6">
             {populars.map((item, i) => (
               <button
                 className="bg-[#DAE3EB] rounded-sm sm:w-60 sm:py-1 sm:rounded-full sm:text-xl text-[#003054] w-44"

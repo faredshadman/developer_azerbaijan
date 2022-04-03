@@ -1,14 +1,21 @@
 import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const Partners = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
-    <section>
+    <section data-aos="fade-up">
       <div className="max-w-6xl mx-auto mb-10">
         <h1 className="py-10 text-center text-5xl font-bold text-[#003054]">
           Partners
         </h1>
         <div className="grid max-w-6xl place-items-center grid-cols-2 md:grid-cols-3 gap-4 flex-col lg:grid-cols-6">
           {[0, 1, 2, 3, 4, 5].map((i) => (
-            <div key={i}>
+            <div key={i} data-aos="flip-up">
               <Image
                 src="/img/partner.svg"
                 alt="partner"

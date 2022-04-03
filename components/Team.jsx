@@ -1,8 +1,14 @@
-import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 import { TeamMember } from "./index";
 const Team = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
-    <div id="our-team" className="max-w-6xl mx-auto my-10">
+    <div data-aos="fade-up" id="our-team" className="max-w-6xl mx-auto my-10">
       <h1 className="text-[#003054] text-3xl md:text-5xl font-bold text-center mb-10">
         Meet our team
       </h1>

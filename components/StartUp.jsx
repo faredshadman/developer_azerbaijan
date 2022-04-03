@@ -1,5 +1,7 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const startups = [7000, 7000, 7000, 7000];
 const data = [
   {
@@ -22,11 +24,17 @@ const data = [
   },
 ];
 const StartUp = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   const [extra, setExtra] = useState(false);
   return (
     <section id="startups">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col items-center  max-w-lg mx-auto mt-4 space-y-6">
+        <div
+          data-aos="fade-right"
+          className="flex flex-col items-center  max-w-lg mx-auto mt-4 space-y-6">
           <h1 className="text-5xl">Startup</h1>
           <p className="text-center text-[#636363]  text-lg">
             Put your startup in this section and find investor, developer,
@@ -39,6 +47,9 @@ const StartUp = () => {
         <div className="mt-10 flex flex-wrap space-y-4 lg:space-y-0 items-center justify-between">
           {startups.map((startup, i) => (
             <div
+              data-aos="fade-up"
+              data-aos-easing="ease-in-sine"
+              data-aos-delay="100"
               key={i}
               className="flex shadow-sm p-2 flex-col w-[100%] lg:w-[25%] items-center space-y-6">
               <h2 className="text-5xl text-[#003054] font-bold"> {startup}</h2>
@@ -47,7 +58,9 @@ const StartUp = () => {
           ))}
         </div>
         <hr className="mt-8" />
-        <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 items-center justify-between mt-10">
+        <div
+          data-aos="flip-up"
+          className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 items-center justify-between mt-10">
           <h1 className="text-2xl lg:mb-4 lg:text-5xl text-center lg:text-left text-[#003054] font-bold">
             What investors are looking for?
           </h1>
@@ -55,7 +68,9 @@ const StartUp = () => {
             Invest
           </button>
         </div>
-        <div className="flex flex-col space-y-6 lg:space-y-0 flex-wrap lg:flex-row items-center justify-between mt-10">
+        <div
+          data-aos="fade-left"
+          className="flex flex-col space-y-6 lg:space-y-0 flex-wrap lg:flex-row items-center justify-between mt-10">
           {data.map((item) => (
             <div
               key={item.id}
@@ -74,7 +89,9 @@ const StartUp = () => {
           ))}
         </div>
         {extra && (
-          <div className="flex flex-col space-y-6 lg:space-y-0 flex-wrap lg:flex-row items-center justify-between mt-10">
+          <div
+            data-aos="fade-left"
+            className="flex flex-col space-y-6 lg:space-y-0 flex-wrap lg:flex-row items-center justify-between mt-10">
             {data.map((item) => (
               <div
                 key={item.id}
