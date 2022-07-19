@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaTimes, FaBars, FaSearch } from "react-icons/fa";
 import { useState } from "react";
+import * as ga from "../lib/ga";
 const navItems = [
   "About",
   "Lessons",
@@ -11,11 +12,18 @@ const navItems = [
   "Contact us",
 ];
 const langs = ["en", "aze"];
-
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
   const handleSidebar = () => {
     setSidebar(!sidebar);
+  };
+  const search = () => {
+    ga.event({
+      action: "search",
+      params: {
+        search_term: "salam",
+      },
+    });
   };
   return (
     <div className="h-14 shadow-md">
@@ -109,7 +117,9 @@ const Header = () => {
             <button className="bg-[#E6F4FF] text-[#8E8E8E] px-2 h-8 rounded-md">
               Log in
             </button>
-            <button className="bg-[#0B96FF] text-white px-2 h-8 rounded-md">
+            <button
+              onClick={search}
+              className="bg-[#0B96FF] text-white px-2 h-8 rounded-md">
               Sign Up
             </button>
           </div>
